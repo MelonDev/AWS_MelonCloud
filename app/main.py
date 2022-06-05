@@ -8,10 +8,9 @@ app = FastAPI(title='Serverless Lambda FastAPI')
 app.include_router(api_router, prefix="/api/v1")
 
 
-@app.get("/",  tags=["Endpoint Test"])
+@app.get("/", tags=["Endpoint Test"])
 def main_endpoint_test():
     return {"message": "Welcome CI/CD Pipeline with GitHub Actions!"}
 
 
-# to make it work with Amazon Lambda, we create a handler object
-handler = Mangum(app=app)
+handler = Mangum(app, lifespan="off")
