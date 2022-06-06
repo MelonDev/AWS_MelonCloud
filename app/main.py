@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from mangum import Mangum
 import uvicorn
 
-from api.v1.api import router as api_router
+from app.api.v1.api import router as api_router
 
 app = FastAPI(title='Serverless Lambda FastAPI')
 
