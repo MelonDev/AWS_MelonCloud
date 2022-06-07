@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from mangum import Mangum
-from .api.v1.api import router as api_router
+
+from app.api.v1.api import router as api_router
+import uvicorn
 
 app = FastAPI(title='Serverless Lambda FastAPI')
 
@@ -13,3 +15,6 @@ def main_endpoint_test():
 
 
 handler = Mangum(app=app)
+
+if __name__ == '__main__':
+    uvicorn.run(app)
