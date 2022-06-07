@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from app.main import app
+from main import app
 
 client = TestClient(app)
 
@@ -10,5 +10,5 @@ def test_main_resource():
 
 
 def test_child_resource():
-    response_auth = client.get(f"/api/v1/tests")
+    response_auth = client.get(f"/api/v1/test")
     assert response_auth.status_code == 200
