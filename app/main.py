@@ -4,14 +4,14 @@ from mangum import Mangum
 from api.v1.api import router as api_router
 import uvicorn
 
-app = FastAPI(title='Serverless Lambda FastAPI')
+app = FastAPI(title='MelonCloud')
 
 app.include_router(api_router, prefix="/api/v1")
 
 
-@app.get("/", tags=["Endpoint Test"])
-def main_endpoint_test():
-    return {"message": "Welcome CI/CD Pipeline with GitHub Actions!"}
+@app.get("/", tags=["Main"])
+def main():
+    return {"message": "Hello! I'm MelonCloud"}
 
 
 handler = Mangum(app=app)
