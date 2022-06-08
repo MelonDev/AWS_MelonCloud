@@ -4,7 +4,7 @@ from mangum import Mangum
 from api.v1.api import router as api_router
 import uvicorn
 
-app = FastAPI(title='MelonCloud', root_path="/stage")
+app = FastAPI(title='MelonCloud', openapi_prefix="/stage")
 
 app.include_router(api_router, prefix="/api/v1")
 
