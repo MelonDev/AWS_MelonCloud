@@ -85,7 +85,7 @@ jobs:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
 
       - name: Deploy new Lambda
-        run: aws lambda update-function-code --function-name fastapi --s3-bucket 06.micro.isobars --s3-key meloncloud_api.zip
+        run: aws lambda update-function-code --function-name meloncloud --s3-bucket 06.micro.isobars --s3-key meloncloud_api.zip
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
