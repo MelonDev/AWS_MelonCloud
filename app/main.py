@@ -16,5 +16,6 @@ def main_endpoint_test():
 
 handler = Mangum(app=app)
 
+
 if __name__ == '__main__':
     uvicorn.run(app)
