@@ -4,7 +4,7 @@ from mangum import Mangum
 from api.v1.api import router as api_router
 import uvicorn
 
-from app.environment.environment import SECRET_KEY
+from environment.environment import SECRET_KEY
 
 app = FastAPI(title='MelonCloud', openapi_prefix="/stage")
 
